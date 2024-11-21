@@ -1,0 +1,170 @@
+.main-menu {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: url('../assets/MainMenu.png') center / cover no-repeat;
+    background-color: #2F2A3F; 
+}
+
+.welcome-message {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-family: 'Press Start 2P', monospace; 
+    color: #D9B88F; 
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.games-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    position: absolute;
+    bottom: 285px;
+    padding: 0 20px;
+}
+
+.game-link {
+    width: 246px;
+    text-decoration: none;
+}
+
+.menu-box {
+    width: 246px;
+    height: 300px;
+    padding: 0;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    background: url('../assets/door.png') center / 100% 100% no-repeat;
+    image-rendering: pixelated;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.game-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 16px;
+    margin-top: 40px;
+    text-transform: uppercase;
+    color: #D9B88F; 
+    text-shadow: 2px 2px 0 #2F2A3F; 
+}
+
+.level-info {
+    margin-top: 10px;
+    color: #9ABED5; 
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    text-shadow: 1px 1px 0 #2F2A3F; 
+}
+
+.spectroom-title {
+    position: absolute;
+    bottom: 50px;
+    font-family: 'Press Start 2P', monospace;
+    color: #5BA58C; 
+    text-shadow: 2px 2px 0 #2F2A3F; 
+}
+
+.settings-link {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #D9B88F;
+    z-index: 1000;  
+}
+
+.menu-box:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+    .games-container {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .game-link {
+        width: 246px;
+    }
+
+    .menu-box {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .games-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-link {
+        width: 246px;
+        margin: 10px 0;
+    }
+
+    .game-title {
+        font-size: 14px;
+    }
+}
+
+.door-image {
+    width: 246px;
+    height: 300px;
+    background: url('../assets/door.png') center / 100% 100% no-repeat;
+    image-rendering: pixelated;
+    transition: transform 0.2s ease;
+}
+
+.door-image.opening {
+    width: 246px;
+    height: 300px;
+    background: url('../assets/Opening.png');
+    background-size: 1230px 300px; 
+    image-rendering: pixelated;
+    animation: doorOpen 0.7s steps(4) forwards;
+    animation-fill-mode: forwards;
+}
+
+.door-image.closing {
+    width: 246px;
+    height: 300px;
+    background: url('../assets/Closing.png');
+    background-size: 738px 300px; 
+    image-rendering: pixelated;
+    animation: doorClose 0.2s steps(2) forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes doorOpen {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -984px 0;
+    }
+}
+
+@keyframes doorClose {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -492px 0;  
+    }
+}
